@@ -26,12 +26,41 @@ class JogoController extends AppController
 		// Detecta em qual pergunta está para retomar o progresso
 	}
 
+	public function ajax()
+	{
+		$this->loadModel("Equipes");
+
+		$equipeId = $this->request->getQuery("equipe");
+		$equipe = $this->Equipes->pegarId($equipeId);
+
+		// Checar se todos estão conectados
+		$this->loadModel("Equipes");
+		$equipes = $this->Equipes->pegar();
+
+		$equipesConectadas = true;
+
+		foreach ($equipes as $equipe)
+		{
+			if (!$equipe->conectada)
+			{
+				$equipesConectadas = false;
+				break;
+			}
+		}
+
+		$resultado = [
+			"equipesConectadas" => $equipesConectadas,
+			"equipe" => $equipe
+		];
+		echo json_encode($resultado);
+		die();
+	}
+
 	public function desconectarEquipes()
 	{
 		$this->loadModel("Equipes");
 
-		for ($i = 1; $i <= 3; $i++)
-		{
+		for ($i = 1; $i <= 3; $i++) {
 			$equipe = $this->Equipes->get($i);
 
 			$equipe->conectada = false;

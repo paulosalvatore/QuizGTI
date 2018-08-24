@@ -1,6 +1,10 @@
 <?= $this->Html->css("pergunta") ?>
 <?= $this->Html->script("jogo") ?>
 
+<script>
+	var equipeId = <?= $equipe ?>;
+</script>
+
 <div class="lateral">
 	<p>
 		<?=
@@ -33,7 +37,7 @@
 	Aguardando equipes...
 </div>
 
-<div class="pergunta">
+<div id="jogo">
 	<h1>1. This is a question?</h1>
 
 	<form method="get" id="form">

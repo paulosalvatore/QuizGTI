@@ -14,10 +14,34 @@ class EquipesTable extends Table
 {
 	public function initialize(array $config)
 	{
-		$this->hasMany("Alternativas", [
+		$this->belongsToMany("Alternativas", [
 			"joinTable" => "equipes_alternativas"
 		]);
 
 		$this->setTable("equipes");
+	}
+
+	public function pegar()
+	{
+		return $this
+			->find()
+			->toArray();
+	}
+
+	public function pegarId($id)
+	{
+		return $this
+			->find()
+			->where(
+				[
+					"Equipes.id" => $id
+				]
+			)
+			->contain(
+				[
+					"Alternativas"
+				]
+			)
+			->toArray();
 	}
 }

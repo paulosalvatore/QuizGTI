@@ -11,6 +11,10 @@
 
 	<?= $this->Html->script("jquery.min") ?>
 
+	<script>
+		var url = '<?= $this->request->scheme() . "://" . $this->request->host() . $this->request->webroot ?>';
+	</script>
+
 	<?= $this->fetch("meta") ?>
     <?= $this->fetch("css") ?>
     <?= $this->fetch("script") ?>

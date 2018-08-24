@@ -62,8 +62,11 @@ h2 {
 	font-size: 80px;
 }
 
-.pergunta {
+#jogo {
 	display: none;
+}
+
+.pergunta {
 	background: black;
 	width: 1220px;
 	height: 180px;

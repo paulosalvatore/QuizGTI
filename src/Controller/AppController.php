@@ -47,6 +47,8 @@ class AppController extends Controller
 
 	    $this->equipe = $this->request->getQuery("equipe");
 
+	    $this->set("equipe", $this->equipe);
+
 	    if ($this->equipe > 0)
 	        $this->set("equipeImagem", $this->imagens[$this->equipe - 1]);
 
