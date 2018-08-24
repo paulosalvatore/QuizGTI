@@ -1,0 +1,185 @@
+body {
+	height: 95%;
+	background-image: url("../img/niobium_gray.png");
+	background-repeat: no-repeat;
+	background-size: 100%;
+	bottom: 0;
+	color: black;
+	left: 0;
+	overflow: auto;
+	position: absolute;
+	right: 0;
+	text-align: center;
+	top: 0;
+	font-family: Verdana, sans-serif;
+}
+
+.lateral {
+	background-color: rgba(238, 25, 92);
+	height: 20%;
+	text-align: center;
+	left: 0px;
+	overflow: auto;
+	position: absolute;
+	margin: -8px;
+	right: 0%;
+	padding: 1.5%;
+	text-align: center;
+	top: 0%;
+}
+
+button {
+	background: rgba(238, 25, 92);
+	width: 214px;
+	height: 70px;
+	position: absolute;
+	top: 90%;
+	left: 82%;
+}
+
+.coin {
+	position: absolute;
+	top: 10%;
+	left: 0%;
+}
+
+h2 {
+	color: white;
+}
+
+.codigo {
+	width: 260px;
+	border: 1px dashed;
+	background-color: black;
+	padding: 4px 4px;
+	position: absolute;
+	left: 40%;
+	border-radius: 12px;
+}
+
+#minuto, #segundo {
+	color: yellow;
+	font-size: 80px;
+}
+
+.pergunta {
+	display: none;
+	background: black;
+	width: 1220px;
+	height: 180px;
+	position: absolute;
+	top: 30%;
+	left: 4%;
+	opacity: 0.65;
+	-moz-opacity: 0.65;
+	filter: alpha(opacity=65);
+	border-radius: 12px;
+}
+
+h1 {
+	color: white;
+	width: 1220px;
+	height: 145px;
+	position: absolute;
+	top: 30%;
+	left: 4%;
+	text-align: left;
+	padding-left: 10px;
+}
+
+#form {
+	color: aliceblue;
+	text-align: left;
+}
+
+.ra {
+	background: black;
+	width: 900px;
+	height: 40px;
+	position: absolute;
+	top: 59%;
+	left: 4%;
+	opacity: 0.65;
+	-moz-opacity: 0.65;
+	filter: alpha(opacity=65);
+	border-radius: 12px;
+	border: 1px solid;
+	border-color: goldenrod;
+}
+
+.rb {
+	background: black;
+	width: 900px;
+	height: 40px;
+	position: absolute;
+	top: 66%;
+	left: 4%;
+	opacity: 0.65;
+	-moz-opacity: 0.65;
+	filter: alpha(opacity=65);
+	border-radius: 12px;
+	border: 1px solid;
+	border-color: goldenrod;
+}
+
+.rc {
+	background: black;
+	width: 900px;
+	height: 40px;
+	position: absolute;
+	top: 73%;
+	left: 4%;
+	opacity: 0.65;
+	-moz-opacity: 0.65;
+	filter: alpha(opacity=65);
+	border-radius: 12px;
+	border: 1px solid;
+	border-color: goldenrod;
+}
+
+.rd {
+	background: black;
+	width: 900px;
+	height: 40px;
+	position: absolute;
+	top: 80%;
+	left: 4%;
+	opacity: 0.65;
+	-moz-opacity: 0.65;
+	filter: alpha(opacity=65);
+	border-radius: 12px;
+	border: 1px solid;
+	border-color: goldenrod;
+}
+
+.re {
+	background: black;
+	width: 900px;
+	height: 40px;
+	position: absolute;
+	top: 87%;
+	left: 4%;
+	opacity: 0.65;
+	-moz-opacity: 0.65;
+	filter: alpha(opacity=65);
+	border-radius: 12px;
+	border: 1px solid;
+	border-color: goldenrod;
+}
+
+.ra:hover, .rb:hover, .rc:hover, .rd:hover, .re:hover {
+	background: rgba(238, 25, 92);
+}
+
+.logo {
+	position: absolute;
+	top: 17%;
+	left: 90%;
+}
+
+#aguardando_equipes {
+	font-size: 32px;
+	color: white;
+	left: 150px;
+	position: absolute;
+}

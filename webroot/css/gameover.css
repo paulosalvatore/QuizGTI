@@ -1,0 +1,104 @@
+body{
+    height: 1080px;
+	width: 1020px;
+    background-image: url(" ../Imagens/niobium_gray.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    bottom: 0;
+    color: black;
+    left: 0;
+    overflow: auto;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+}
+
+.lateral{
+    background-color: rgba(238, 25, 92);
+    height: 100%;
+    text-align:center;
+    left: 70%;
+    overflow: auto;
+    position: absolute;
+    margin: -8px;
+    right: 0%;
+    padding: 1.5%;
+    top: 0%;
+}
+
+h1{
+    color: rgba(217, 140, 32);
+    font-size: 110px;    
+    position: absolute;
+    left: 240px;
+	bottom: 255px;
+}
+
+h2{
+    color: white;
+}
+
+.corpo{
+    height: 200px;
+    width: 56%;
+    left: 0%;
+    position: absolute;
+    margin: -8px;
+    right: 50px;
+    bottom: 0%;
+}
+.logo{
+    height: 100px;
+    width: 30%;
+    left: 0%;
+    position: absolute;
+    margin: -8px;
+    right: 50px;
+    padding: 1.5%;
+    text-align: left;
+    top: 0%;
+}
+.topo2{
+    height: 200px;
+    width: 37%;
+    left: 44%;
+    position: absolute;
+    margin: -8px;
+    right: 57px;
+    top: 0%;
+}
+.coin{
+    height: 256px;
+    width: 64%;
+    left: 0%;
+    position: absolute;
+    margin: -8px;
+    right: 50px;
+    bottom: 10%;
+
+}
+h3{
+    color: rgba(238, 185, 54);
+    font-size: 40px;    
+    position: absolute;
+    left: 350px;
+	bottom: 150px;
+}
+.coin1{
+    height: 205px;
+    width: 320;
+    left: 18%;
+    position: absolute;
+    margin: -8px;
+    right: 44px;
+    top: -18%;}
+
+.coin2{
+    height: 205px;
+    width: 320;
+    left: 62%;
+    position: absolute;
+    margin: -8px;
+    right: 57px;
+    top: -19%;}

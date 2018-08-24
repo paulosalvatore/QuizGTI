@@ -1,0 +1,107 @@
+body {
+	height: 1080px;
+	width: 1020px;
+	background-image: url("../img/niobium_gray.png");
+	background-repeat: repeat-x;
+	background-size: 100%;
+	bottom: 0px;
+	color: black;
+	left: 0px;
+	overflow: auto;
+	position: absolute;
+	right: 0px;
+	text-align: center;
+	top: 0px;
+}
+
+.fiap {
+	top: 65px;
+	right: 5px;
+	position: absolute;
+	margin: -8px;
+	padding: 1.5%;
+	text-align: left;
+}
+
+.logoF {
+	height: 50px;
+}
+
+.bomesp {
+	right: 230px;
+	top: 60px;
+	position: absolute;
+	margin: -8px;
+}
+
+.logoB {
+	top: 5px;
+	width: auto;
+	height: 80px;
+
+}
+
+#part {
+	height: 200px;
+	width: 56%;
+	top: 5px;
+	left: -50px;
+	position: absolute;
+	margin: -8px;
+	bottom: 0%;
+	font-size: 20px;
+	color: black;
+}
+
+.lateral {
+	background-color: rgba(238, 25, 92);
+	width: 350px;
+	height: 1080px;
+	right: -280px;
+	text-align: center;
+	overflow: auto;
+	position: absolute;
+	margin: -8px;
+	padding: 1.5%;
+	top: 0%;
+	opacity: 0.9;
+	border: 2px inset rgba(238, 25, 92);
+}
+
+COIN {
+	opacity: 1.0;
+
+}
+
+#button {
+	background-position: center;
+	position: absolute;
+	left: 33%;
+	top: 550px;
+	width: 140px;
+	height: 140px;
+	border-radius: 50%;
+}
+
+#BC {
+	color: goldenrod;
+	font-size: 60px;
+	position: absolute;
+	left: 100px;
+	bottom: 0;
+}
+
+#part {
+
+}
+
+.text {
+	height: 200px;
+	width: 56%;
+	top: 150px;
+	left: 0%;
+	position: absolute;
+	margin: -8px;
+	right: 50px;
+	bottom: 0%;
+}
