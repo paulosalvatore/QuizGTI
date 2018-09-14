@@ -10,15 +10,13 @@ namespace App\Model\Table;
 
 use Cake\ORM\Table;
 
-class EquipesTable extends Table
+class PerguntasTable extends Table
 {
 	public function initialize(array $config)
 	{
-		$this->belongsToMany("Alternativas", [
-			"joinTable" => "equipes_alternativas"
-		]);
+		$this->hasMany("Alternativas");
 
-		$this->setTable("equipes");
+		$this->setTable("perguntas");
 	}
 
 	public function pegar()
@@ -26,9 +24,7 @@ class EquipesTable extends Table
 		return $this
 			->find()
 			->contain([
-				"Alternativas" => [
-					"Perguntas"
-				]
+				"Alternativas"
 			])
 			->toArray();
 	}
@@ -38,7 +34,7 @@ class EquipesTable extends Table
 		return $this
 			->find()
 			->where([
-				"Equipes.id" => $id
+				"Perguntas.id" => $id
 			])
 			->contain([
 				"Alternativas"

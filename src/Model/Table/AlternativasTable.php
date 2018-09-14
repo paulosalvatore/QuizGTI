@@ -18,6 +18,8 @@ class AlternativasTable extends Table
 			"joinTable" => "equipes_alternativas"
 		]);
 
+		$this->belongsTo("Perguntas");
+
 		$this->setTable("alternativas");
 	}
 }

@@ -19,6 +19,10 @@ class JogoController extends AppController
 		$equipe->conectada = true;
 		$this->Equipes->save($equipe);
 
+		$this->loadModel("Perguntas");
+		$perguntas = $this->Perguntas->pegar();
+		$this->set("perguntas", json_encode($perguntas));
+
 		// Definir a equipe como conectada
 
 		// O AJAX checa a conexão das três equipes e
@@ -31,7 +35,7 @@ class JogoController extends AppController
 		$this->loadModel("Equipes");
 
 		$equipeId = $this->request->getQuery("equipe");
-		$equipe = $this->Equipes->pegarId($equipeId);
+		$equipeSelecionada = $this->Equipes->pegarId($equipeId);
 
 		// Checar se todos estão conectados
 		$this->loadModel("Equipes");
@@ -48,9 +52,74 @@ class JogoController extends AppController
 			}
 		}
 
+		$this->loadModel("Perguntas");
+		$perguntas = $this->Perguntas->pegar();
+		$quantidadePerguntas = count($perguntas);
+
+		$jogoFinalizado = false;
+
+		foreach ($equipes as $equipe) {
+			$perguntasEquipe = [];
+			foreach ($equipe->alternativas as $alternativa) {
+				if (!in_array($alternativa->pergunta->id, $perguntasEquipe)) {
+					$perguntasEquipe[] = $alternativa->pergunta->id;
+				}
+			}
+
+			$jogoFinalizado = count($perguntasEquipe) == $quantidadePerguntas;
+
+			if ($jogoFinalizado)
+				break;
+		}
+
 		$resultado = [
 			"equipesConectadas" => $equipesConectadas,
-			"equipe" => $equipe
+			"equipeSelecionada" => $equipeSelecionada,
+			"jogoFinalizado" => $jogoFinalizado
+		];
+		echo json_encode($resultado);
+		die();
+	}
+
+	public function ajaxResposta()
+	{
+		$this->loadModel("Perguntas");
+		$perguntaId = (int)$this->request->getQuery("perguntaId");
+		$pergunta = $this->Perguntas->pegarId($perguntaId);
+
+		$perguntas = $this->Perguntas->pegar();
+		$quantidadePerguntas = count($perguntas);
+
+		$alternativaOrdem = $this->request->getQuery("alternativa");
+		$alternativa = $pergunta["alternativas"][$alternativaOrdem - 1];
+
+		$this->loadModel("Equipes");
+		$equipeId = $this->request->getQuery("equipe");
+		$equipe = $this->Equipes->pegarId($equipeId);
+
+		$alternativasEquipe = [$alternativa->id];
+		foreach ($equipe->alternativas as $alternativaEquipe)
+		{
+			$alternativasEquipe[] = $alternativaEquipe->id;
+		}
+
+		$equipe = $this->Equipes->patchEntity($equipe, [
+			"alternativas" => [
+				"_ids" => $alternativasEquipe
+			]
+		]);
+
+		$equipe = $this->Equipes->save($equipe);
+
+		$equipes = $this->Equipes->pegar();
+
+		$resultado = [
+			"perguntaId" => $perguntaId,
+			"pergunta" => $pergunta,
+			"alternativaSelecionada" => $alternativaOrdem,
+			"alternativa" => $alternativa,
+			"equipe" => $equipe,
+			"proximaPergunta" => $perguntaId < $quantidadePerguntas
 		];
 		echo json_encode($resultado);
 		die();
@@ -63,11 +132,12 @@ class JogoController extends AppController
 		for ($i = 1; $i <= 3; $i++) {
 			$equipe = $this->Equipes->get($i);
 
+			$equipe->alternativas = [];
 			$equipe->conectada = false;
 			$this->Equipes->save($equipe);
 		}
 
-		echo "Equipes desconectadas com sucesso.";
+		echo "Equipes desconectadas e limpas com sucesso.";
 
 		die();
 	}

@@ -3,6 +3,7 @@
 
 <script>
 	var equipeId = <?= $equipe ?>;
+	var perguntas = <?= $perguntas ?>;
 </script>
 
 <div class="lateral">
@@ -38,36 +39,41 @@
 </div>
 
 <div id="jogo">
-	<h1>1. This is a question?</h1>
+	<h1 id="pergunta">1. This is a question?</h1>
 
 	<form method="get" id="form">
 		<div class="ra">
-			<input type="radio" name="a" value="a">A. resposta A.
+			<input type="radio" id="alternativa_1" name="alternativas" value="1" checked>
+			<label for="alternativa_1">A. resposta A.</label>
 			<br>
 		</div>
 
 		<div class="rb">
-			<input type="radio" name="a" value="a"> A. resposta A.
+			<input type="radio" id="alternativa_2" name="alternativas" value="2">
+			<label for="alternativa_2">A. resposta A.</label>
 			<br>
 		</div>
 
 		<div class="rc">
-			<input type="radio" name="a" value="a"> A. resposta A.
+			<input type="radio" id="alternativa_3" name="alternativas" value="3">
+			<label for="alternativa_3">A. resposta A.</label>
 			<br>
 		</div>
 
 		<div class="rd">
-			<input type="radio" name="a" value="a"> A. resposta A.
+			<input type="radio" id="alternativa_4" name="alternativas" value="4">
+			<label for="alternativa_4">A. resposta A.</label>
 			<br>
 		</div>
 
 		<div class="re">
-			<input type="radio" name="a" value="a"> A. resposta A.
+			<input type="radio" id="alternativa_5" name="alternativas" value="5">
+			<label for="alternativa_5">A. resposta A.</label>
 			<br>
 		</div>
 	</form>
 
 	<div class="button-play">
-		<button type="button" onClick="window.open('gameover.html')" class="button"><h2>Proxima</h2></button>
+		<button id="proxima" type="button" class="button">Proxima</button>
 	</div>
 </div>
